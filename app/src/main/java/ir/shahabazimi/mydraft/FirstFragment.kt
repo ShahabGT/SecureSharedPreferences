@@ -30,11 +30,8 @@ class FirstFragment : Fragment() {
     }
 
     private fun init() = with(binding) {
-
-
         decryptButton.setOnClickListener {
-            if (General.canAuthenticate(requireContext())) {
-
+            if (General.canAuthenticate(requireContext()))
                 FingerprintPrompt.show(this@FirstFragment).observe(viewLifecycleOwner) {
                     if (it == false) {
                         decryptedTextView.text = ""
@@ -43,9 +40,9 @@ class FirstFragment : Fragment() {
                         decryptedTextView.text =
                             MySp(requireContext()).load()?.ifEmpty { "NOTHING IS SAVED" }
                 }
-            } else {
+            else
                 Toast.makeText(context, "DEVICE IS NOT SECURED", Toast.LENGTH_SHORT).show()
-            }
+
         }
         encryptButton.setOnClickListener {
             val data = binding.inputEdittext.text.toString()

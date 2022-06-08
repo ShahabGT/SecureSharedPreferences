@@ -13,9 +13,9 @@ class MySp private constructor(ctx: Context) {
 
     private val sp =
         EncryptedSharedPreferences.create(
-            ctx,
+            ctx.applicationContext,
             sharedPrefsFile,
-            MasterKey.Builder(ctx)
+            MasterKey.Builder(ctx.applicationContext)
                 .setUserAuthenticationRequired(true, 15)
                 .setKeyGenParameterSpec(
                     KeyGenParameterSpec.Builder(
