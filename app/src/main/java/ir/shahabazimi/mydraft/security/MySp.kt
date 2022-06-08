@@ -1,12 +1,15 @@
 package ir.shahabazimi.mydraft.security
 
 import android.content.Context
+import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
+import androidx.annotation.RequiresApi
 import androidx.core.content.edit
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 
+@RequiresApi(Build.VERSION_CODES.M)
 class MySp private constructor(ctx: Context) {
 
     private val sharedPrefsFile: String = "SHAHABGT"

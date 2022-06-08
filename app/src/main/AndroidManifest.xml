@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ir.shahabazimi.mydraft">
 
+    <uses-sdk tools:overrideLibrary="androidx.security.ktx"/>
+
     <application
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_rules"
